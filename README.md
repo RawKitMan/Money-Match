@@ -1,0 +1,2 @@
+# Money-Match
+This app is for those playing Fighting Games (Street Fighter, Smash Brothers, Tekken, etc) to set up "Money Matches" with those who don't know who to play against. The players will search for others who play their particular game, request and agree to matches for a set amount of money, and meet at a safe designated venue. This app does not hold onto any of the money nor distributes it.
