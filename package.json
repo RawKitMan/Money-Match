@@ -1,0 +1,25 @@
+{
+  "name": "money-match",
+  "version": "1.0.0",
+  "description": "'Money match' setup app for fighting game players",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.16.4",
+    "mysql2": "^1.6.5",
+    "sequelize": "^4.42.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RawKitMan/Money-Match.git"
+  },
+  "author": "CJ Vaughn, Will H, Nick Stofko",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RawKitMan/Money-Match/issues"
+  },
+  "homepage": "https://github.com/RawKitMan/Money-Match#readme"
+}
