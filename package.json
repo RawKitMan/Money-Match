@@ -4,6 +4,8 @@
   "description": "'Money match' setup app for fighting game players",
   "main": "server.js",
   "dependencies": {
+    "dotenv": "^6.2.0",
+    "eslint": "^5.13.0",
     "express": "^4.16.4",
     "mysql2": "^1.6.5",
     "sequelize": "^4.42.0"
