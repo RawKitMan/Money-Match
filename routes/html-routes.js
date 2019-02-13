@@ -13,7 +13,7 @@ module.exports = function(app) {
   //Finds a player with a specific id
   app.get("/players/:id", function(req, res) {
     db.Example.findOne({ where: { id: req.params.id } }).then(function(dbPlayer) {
-      res.render("example", {
+      res.render("player", {
         player: dbPlayer
       });
     });
