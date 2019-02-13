@@ -14,7 +14,7 @@ module.exports = function(app) {
   app.get("/players/:id", function(req, res) {
     db.Example.findOne({ where: { id: req.params.id } }).then(function(dbPlayer) {
       res.render("example", {
-        player: dbPlayers
+        player: dbPlayer
       });
     });
   });
