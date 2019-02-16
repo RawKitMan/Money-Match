@@ -14,6 +14,11 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../views/index.html"));
   });
 
+  //See list of venues
+  app.get("/locations", function(req, res) {
+    res.sendFile(path.join(__dirname, "../views/locations.html"));
+  });
+
   //If the incorrect URL is provided, 404 page will appear.
   app.get("*", function(req, res) {
     res.sendFile(path.join(__dirname, "../views/404.html"));
