@@ -1,3 +1,5 @@
+
+
 const path = require("path");
 
 module.exports = function(app) {
@@ -14,11 +16,18 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../views/index.html"));
   });
 
+  app.get("/find-challenge"), function(req, res) {
+      re
+  }
+
   //See list of venues
   app.get("/locations", function(req, res) {
     res.sendFile(path.join(__dirname, "../views/locations.html"));
   });
 
+  app.get("/contact", function(req, res) {
+    res.sendFile(path.join(__dirname, "../views/contact.html"));
+  });
   //If the incorrect URL is provided, 404 page will appear.
   app.get("*", function(req, res) {
     res.sendFile(path.join(__dirname, "../views/404.html"));

@@ -16,6 +16,17 @@ router.get("/", function (req, res) {
   });
 });
 
+router.get("/players/:username", function(req, res){
+  db.Player.findOne({
+    where:{
+      username: req.params.username
+    }
+  }).then(function(dbPlayer){
+    console.log(dbPlayer);
+    res.json(dbPlayer);
+  });
+});
+
 router.get("/players/:game", function(req, res){
   db.Player.findAll({
     where: {
@@ -32,7 +43,7 @@ router.get("/venues/:id", function(req, res){
       id: req.params.id
     }
   }).then(function(dbVenue){
-    res.json(dbVenue);
+    res.json(dbVenue);s
   });
 });
 
