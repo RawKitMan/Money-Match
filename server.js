@@ -15,13 +15,14 @@ app.use(express.json());
 // Static directory
 app.use(express.static("public"));
 
-// Routes accessed via controller
+// Routes accessed via controller and html route folder
 const routes = require("./controllers/mm-controller.js");
 app.use(routes);
+require("./routes/html-routes");
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
-db.sequelize.sync({ force: true }).then(function() {
+db.sequelize.sync().then(function() {
   app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
   });
