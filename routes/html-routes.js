@@ -1,5 +1,3 @@
-
-
 const path = require("path");
 
 module.exports = function(app) {
@@ -13,11 +11,11 @@ module.exports = function(app) {
   
   //See whoever has challenged the user
   app.get("/challenged", function(req, res) {
-    res.sendFile(path.join(__dirname, "../views/index.html"));
+    res.sendFile(path.join(__dirname, "../views/challengedhtml"));
   });
 
   app.get("/find-challenge"), function(req, res) {
-      re
+    res.sendFile(path.join(__dirname, "../views/findchallenge.html"));
   }
 
   //See list of venues
