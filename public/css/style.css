@@ -154,3 +154,16 @@ textarea {
   text-align: right;
 }
 /* END LOGIN */
+
+#bg{
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+	
+  /* Preserve aspet ratio */
+  min-width: 100%;
+  min-height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
