@@ -18,7 +18,7 @@ app.use(express.static("public"));
 // Routes accessed via controller and html route folder
 const routes = require("./controllers/mm-controller.js");
 app.use(routes);
-require("./routes/html-routes");
+require("./routes/html-routes")(app);
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
