@@ -1,3 +1,8 @@
+*{
+  font-family: 'Staatliches', cursive;
+  font-size: 25PX;
+}
+
 @import "compass/css3";
 *, *:before, *:after {
   box-sizing: border-box;
@@ -155,6 +160,22 @@ textarea {
 }
 /* END LOGIN */
 
+
+.game-box{
+  background-color: white;
+  color: black;
+  height: 60px;
+}
+
+td.game-item-link.show-more-games-link{
+  color: pink;
+}
+
+.white{
+  width: auto;
+  height: 100px;
+}
+
 #bg{
   position: fixed; 
   top: 0; 
@@ -170,7 +191,7 @@ textarea {
 
 /* CONTACT US */
 
-.body-contact{
+#contact{
 	width:50%;
 	height:50%;
   font-family: 'Roboto Condensed', sans-serif;
@@ -208,3 +229,9 @@ a:hover,a:focus{
 textarea.form-control{
     height:100px;
 }
+
+.decline-button{
+  color: aqua;
+}
+
+/* END CONTACT US */
