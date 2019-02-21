@@ -1,45 +1,54 @@
 $(document).ready(function() {
 
     //Sign-up
-    $('.error').hide();
-    $('#signUp').click(function() {
+    // $('.error').hide();
+    $('#findMatches').click(function(event) {
+        event.preventDefault();
         var name = $('.name').val();
         var email = $('.email').val();
         var username = $('.username').val();
         var password = $('.password').val();
+        var dbPlayers = {
+            name: name,
+            username: username,
+            password: password,
+            mainGame: 'smash bros',
+            age: '12'
+        }
 
-        if(name == '' || email == '' || username == '' || password == '') {
-            $('.name', '.email', '.username', '.password').next().show();
-            return false;
-        }
-        if(IsEmail(email)==false){
-            $('invalid_email').show();
-            return false;
-        }
-        $.post("/api/players", $("#accountForm").serialize(), function(response) {
-            $('#accountForm').fadeOut('slow', function() {
-                $('#correct').html(response);
-                $('#correct').fadeIn('slow');
-            });
-        });
-        return false;
+        // if(name == '' || email == '' || username == '' || password == '') {
+        //     $('.name', '.email', '.username', '.password').next().show();
+        //     return false;
+        // }
+        // if(IsEmail(email)==false){
+        //     $('invalid_email').show();
+        //     return false;
+        // } else {
+                $.ajax({
+                    method: "POST",
+                    url: "/api/players",
+                    data: dbPlayers
+                }).then()     
+        // }
+
+
     });
 
-});
 
 //Verify Email
-function IsEmail(email) {
-    var regex = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-    if(!regex.test(email)) {
-        return false;
-    } else {
-        return true;
-    }
-};
+// function IsEmail(email) {
+//     var regex = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+//     if(!regex.test(email)) {
+//         return false;
+//     } else {
+//         return true;
+//     }
+// };
 
 //Sign-In
-    $('.error').hide();
-    $('#signIn').click(function() {
+    // $('.error').hide();
+    $('#LogIn').click(function() {
+        
         var login = $('.email').val();
         var password = $('.password').val();
         //GET request for user credentials to compare
@@ -49,7 +58,7 @@ function IsEmail(email) {
             dataType: 'json',
             success: function(req, res) {
                 if (login == dbPlayer.username) {
-                    window.location = "/index"
+                    window.location = "/find-challenge"
                 } else {
                     window.location = "/404"
                 }
@@ -59,3 +68,4 @@ function IsEmail(email) {
         //else clear the form 
         //error message.
     })
+});

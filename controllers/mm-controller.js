@@ -55,7 +55,7 @@ router.get("/api/venues/:id", function(req, res){
   });
 });
 
-router.post("/api/players", function (req, res) {
+router.post("/api/players/", function (req, res) {
 
   db.Player.create(req.body).then(function (dbPlayer) {
     console.log(dbPlayer);
@@ -79,9 +79,10 @@ router.post("/api/venues", function (req, res) {
 });
 
 
-router.put("/api/players", function (req, res) {
+router.put("/api/players/", function (req, res) {
 
   db.Player.update({
+    name: req.body.name,
     age: req.body.age,
     username: req.body.username,
     password: req.body.password,
