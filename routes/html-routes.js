@@ -6,22 +6,17 @@ module.exports = function(app) {
 
   //To our login page
   app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "../views/login.handlebars"));
+    res.sendFile(path.join(__dirname, "../views/login.html"));
   });
   
   //See whoever has challenged the user
-  app.get("/challenged", function(req, res) {
-    res.sendFile(path.join(__dirname, "../views/challengedhtml"));
+  app.get("/challenges", function(req, res) {
+    res.sendFile(path.join(__dirname, "../views/challenges.html"));
   });
 
   app.get("/find-challenge"), function(req, res) {
-    res.sendFile(path.join(__dirname, "../views/findchallenge.html"));
+    res.sendFile(path.join(__dirname, "../views/index.html"));
   }
-
-  //See list of venues
-  app.get("/locations", function(req, res) {
-    res.sendFile(path.join(__dirname, "../views/locations.html"));
-  });
 
   app.get("/contact", function(req, res) {
     res.sendFile(path.join(__dirname, "../views/contact.html"));
