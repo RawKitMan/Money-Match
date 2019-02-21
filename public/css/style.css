@@ -69,6 +69,7 @@ h1 {
   color: #fff;
   font-weight: 300;
   margin: 0 0 40px;
+  font-size: 30px
 }
 label {
   position: absolute;
@@ -235,3 +236,7 @@ textarea.form-control{
 }
 
 /* END CONTACT US */
+
+#mainGame{
+  display: block;
+}
