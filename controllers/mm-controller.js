@@ -24,10 +24,10 @@ router.get("/api/challenges", function (req, res) {
   });
 });
 
-router.get("/api/players/:username", function(req, res){
+router.get("/api/players/:email", function(req, res){
   db.Player.findOne({
     where:{
-      username: req.params.username
+      email: req.params.email
     }
   }).then(function(dbPlayer){
     console.log(dbPlayer);

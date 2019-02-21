@@ -31,17 +31,19 @@ $(document).ready(function() {
 
 //Sign-In
     
-    $('#logIn').click(function() {
+    $('#logIn').submit(function(e) {
         
-        var login = $('.email').val();
-        var password = $('.password').val();
+        e.preventDefault();
+        var login = $('#email').val();
+        // var password = $('.password').val();
         //GET request for user credentials to compare
         $.ajax({
-            url: '/api/players/' + username,
+            url: '/api/players/' + login,
             type: 'get',
             dataType: 'json',
-            success: function(req, res) {
-                if (login == dbPlayer.username) {
+            success: function(data) {
+                console.log(data)
+                if (login == data.email) {
                     window.location = "/find-challenge"
                 } else {
                     window.location = "/404"
