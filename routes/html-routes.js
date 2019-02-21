@@ -22,7 +22,7 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../views/contact.html"));
   });
   //If the incorrect URL is provided, 404 page will appear.
-  app.get("*", function(req, res) {
+  app.get("/404", function(req, res) {
     res.sendFile(path.join(__dirname, "../views/404.html"));
   });
 
