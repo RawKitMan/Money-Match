@@ -83,7 +83,6 @@ router.put("/api/players/", function (req, res) {
 
   db.Player.update({
     name: req.body.name,
-    age: req.body.age,
     username: req.body.username,
     password: req.body.password,
     mainGame: req.body.mainGame
