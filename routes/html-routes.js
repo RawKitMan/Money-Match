@@ -18,9 +18,9 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../views/challenges.html"));
   });
 
-  app.get("/find-challenge"), function(req, res) {
-    res.sendFile(path.join(__dirname, "../views/index.html"));
-  }
+  app.get("/find-challenge", function(req, res) {
+    res.sendFile(path.join(__dirname, "../views/find-challenges.html"));
+  });
 
   app.get("/contact", function(req, res) {
     res.sendFile(path.join(__dirname, "../views/contact.html"));
