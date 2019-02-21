@@ -24,7 +24,7 @@
   <div class="form">
 
     <ul class="tab-group">
-      <li class="tab active"><a href="/">Sign Up</a></li>
+      <li class="tab active"><a href="/signup">Sign Up</a></li>
       <li class="tab"><a href="/login">Log In</a></li>
     </ul>
 
@@ -32,51 +32,51 @@
       <div id="signup">
         <h1>Sign Up for Free</h1>
 
-        <!-- <form >
+        <form >
 
           <div class="top-row">
             <div class="field-wrap">
-              <input type="text" required autocomplete="off" placeholder="First Name*" />
+              <input id="firstname" type="text" required autocomplete="off" placeholder="First Name*" />
             </div>
 
             <div class="field-wrap">
-              <input type="text" required autocomplete="off" placeholder="Last Name*" />
+              <input id="lastname" type="text" required autocomplete="off" placeholder="Last Name*" />
             </div>
           </div>
 
           <div class="field-wrap">
-            <input type="username" required autocomplete="off" placeholder="Username*" />
+            <input id="username" type="username" required autocomplete="off" placeholder="Username*" />
           </div>
 
           <div class="field-wrap">
-            <input type="email" required autocomplete="off" placeholder="Email Address*" />
+            <input id="email" type="email" required autocomplete="off" placeholder="Email Address*" />
           </div>
 
           <div class="field-wrap">
-            <input type="password" required autocomplete="off" placeholder="Set A Password*" />
+            <input id="password" type="password" required autocomplete="off" placeholder="Set A Password*" />
           </div>
 
           <div class="field-wrap">
-            <input type="dropdown"required autocomplete="off"/>
-            <select id="gameList">
+            <!-- <input type="dropdown"required autocomplete="off"/> -->
+            <select id="mainGame">
               <option value="1">Select Game</option>
-              <option value="2">Tekken</option>
-              <option value="3">Mortal Kombat</option>
-              <option value="4">Injustice</option>
-              <option value="5">BlazBlue</option>
-              <option value="6">Smash Bros</option>
-              <option value="7">Dragonball FighterZ</option>
-              <option value="8">Street Fighter</option>
+              <option value="Tekken">Tekken</option>
+              <option value="Mortal Kombat">Mortal Kombat</option>
+              <option value="Injustice">Injustice</option>
+              <option value="BlazBlue">BlazBlue</option>
+              <option value="Smash Bros">Smash Bros</option>
+              <option value="Dragonball FighterZ">Dragonball FighterZ</option>
+              <option value="Street Fighter">Street Fighter</option>
             </select>
           </div>
 
           <button type="submit" class="button button-block" id="findMatches">Find Matches</button>
 
-        </form> --> -->
+        </form>
 
       </div>
 
-      <div id="login">
+      <!-- <div id="login">
         <h1>Welcome Back!</h1>
 
         <form>
@@ -101,7 +101,7 @@
 
         </form>
 
-      </div>
+      </div> -->
 
     </div><!-- tab-content -->
 
