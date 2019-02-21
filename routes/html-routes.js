@@ -6,6 +6,10 @@ module.exports = function(app) {
 
   //To our login page
   app.get("/", function(req, res) {
+    res.sendFile(path.join(__dirname, "../views/signup.html"));
+  });
+  
+  app.get("/login", function(req, res) {
     res.sendFile(path.join(__dirname, "../views/login.html"));
   });
   
