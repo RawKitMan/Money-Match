@@ -26,9 +26,7 @@ $(document).ready(function() {
 
 
     });
-
-
-
+    
 //Sign-In
     
     $('#logIn').submit(function(e) {
@@ -42,7 +40,6 @@ $(document).ready(function() {
             type: 'get',
             dataType: 'json',
             success: function(data) {
-                console.log(data)
                 if (login == data.email) {
                     window.location = "/find-challenge"
                 } else {
