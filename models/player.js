@@ -1,3 +1,5 @@
+let bcrypt = require("bcrypt-nodejs");
+
 module.exports = function (sequelize, DataTypes) {
   let Player = sequelize.define("Player", {
     name: {
