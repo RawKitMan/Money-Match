@@ -240,3 +240,25 @@ textarea.form-control{
 #mainGame{
   display: block;
 }
+
+/* bestof */
+
+.bestOf{
+  /* font-size: 20px; */
+  color:black;
+  display: block;
+  width: 30%;
+  text-align: center;
+}
+
+.betAmount{
+  color: black;
+  display: block;
+  width: 30%;
+}
+
+/* CREATE FIND GAME USER INFO */
+
+nav ul a{
+  font-size: 20px;
+}
