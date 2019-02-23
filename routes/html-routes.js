@@ -1,5 +1,6 @@
 let path = require("path");
 let isAuthenticated = require("../config/middleware/isAuthenticated"); 
+var passport = require("../config/passport");
 
 module.exports = function(app) {
 
@@ -9,14 +10,15 @@ module.exports = function(app) {
     if (req.user) { 
       res.redirect("/challenges"); 
     } 
-    res.sendFile(path.join(__dirname, "../public/signup.html")); 
+    res.sendFile(path.join(__dirname, "../views/signup.html")); 
   });
 
   app.get("/login", function(req, res) { // If the user already has an account send them to the members page 
     if (req.user) { 
-      res.redirect("/challenges"); 
+      //res.redirect("/challenges"); 
+      res.sendFile(path.join(__dirname, "../views/challenges.html"));
     } 
-    res.sendFile(path.join(__dirname, "../public/login.html")); 
+    res.sendFile(path.join(__dirname, "../views/login.html")); 
   });
 
   //To our signup page
@@ -24,10 +26,7 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../views/signup.html"));
   });
   
-  //To our login page if an account is already set up for the user
-  app.get("/login", function(req, res) {
-    res.sendFile(path.join(__dirname, "../views/login.html"));
-  });
+  
   
   //See whoever has challenged the user
   app.get("/challenges", isAuthenticated, function(req, res) {
@@ -43,7 +42,7 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../views/contact.html"));
   });
   //If the incorrect URL is provided, 404 page will appear.
-  app.get("/404", function(req, res) {
+  app.get("/404", isAuthenticated, function(req, res) {
     res.sendFile(path.join(__dirname, "../views/404.html"));
   });
 

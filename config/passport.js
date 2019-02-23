@@ -3,7 +3,8 @@ let passport = require("passport");
 let LocalStrategy = require("passport-local").Strategy; // //We will need the models folder to check passport agains 
 let db = require("../models"); // // Telling passport we want to use a Local Strategy. In other words, //we want login with a username/email and password 
 
-passport.use(new LocalStrategy({ usernameField: "email" }, function (email, password, done) { // When a user tries to sign in this code runs 
+passport.use( new LocalStrategy({ usernameField: "email" }, function (email, password, done) { // When a user tries to sign in this code runs 
+    console.log("Running")
     db.Player.findOne({
         where: {
             email: email

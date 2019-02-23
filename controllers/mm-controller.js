@@ -8,9 +8,9 @@ var passport = require("../config/passport");
 
 // Create all our routes and set up logic within those routes where required.
 
-router.post("/api/players", passport.authenticate("local"), function (req, res) { 
-  res.json("/challenges");
-});
+router.post('/api/players/login', passport.authenticate('local', {failureMessage: "Not authenticated"}), (req, res, next)=>{
+  res.json({success: true})
+})
 
 //Access all players
 router.get("/api/players", function (req, res) {
@@ -60,7 +60,7 @@ router.post("/api/players", function(req, res) {
     password: req.body.password,
     mainGame: req.body.mainGame
   }).then(function() { 
-    res.redirect(307, "/challenges"); 
+    console.log("New Player Added") 
   }).catch(function(err) { 
     console.log(err); 
     res.json(err);
