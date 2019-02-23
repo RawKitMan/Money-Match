@@ -3,79 +3,153 @@
 
 <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css">
-
     <title>Challenge</title>
+    <!-- Compiled and minified CSS -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css"> -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
+    <!-- <link href="https://fonts.googleapis.com/css?family=Staatliches" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    -->
+    <!-- <link rel="stylesheet" href="assets/style.css" media="screen" title="no title" charset="utf-8"> -->
+    <!-- <link rel="stylesheet" href="assets/style.css" media="screen" title="no title" charset="utf-8"> -->
+
+
+
+
+
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <link rel="stylesheet" href="style.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="assets/style.css" media="screen" title="no title" charset="utf-8">
     <link href="https://fonts.googleapis.com/css?family=Staatliches" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css?family=Special+Elite" rel="stylesheet">
 </head>
 
 <body>
-
     <div class="container">
-
-        <nav class="white">
-
+        <nav class="navbar">
             <div class="nav-wrapper">
-
                 <img src="MM-logo.png" class="brand-logo black-text" height="100" />
-
                 <ul class="hide-on-med-and-down  right">
-
-                    <li><a href="index.html" class="black-text">Challenged</a></li>
-
-                    <li><a href="challenges.html" class="black-text">Find Challenge</a></li>
-
-                    <li><a href="watchMatches.html" class="black-text">Watch Money Matches</a></li>
-
-                    <li class="active "><a href="contact.html" class="black-text">Contact</a></li>
-
                     <li>
-
-                        <div class="center row">
-
-                            <div class="col s12">
-
-                                <div class="row">
-
-                                    <div class="input-field col s6 s12 black-text">
-
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-                        </div>
-
+                        <a href="challenges.html" class="black-text">
+                            Challenged
+                        </a>
                     </li>
-
+                    <li>
+                        <a href="find-challenges.html" class="black-text">
+                            Find Challenge
+                        </a>
+                    </li>
+                    <li>
+                        <a href="watchMatches.html" class="black-text">
+                            Watch Money Matches
+                        </a>
+                    </li>
+                    <li class="active "><a href="contact.html" class="black-text">Contact</a></li>
+                    <li>
+                        <div class="center row">
+                            <div class="col s12">
+                                <div class="row">
+                                    <div class="input-field col s6 s12 black-text">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
                 </ul>
-
             </div>
-
         </nav>
-
     </div>
     <!-- END NAV -->
+    <br><br><br>
+    <!-- DYNAMIC FORM -->
+    <section id="createForm">
+        <h1>
+            Start A Challenge
+        </h1>
+        <form class="betForm">
+            <div class="field username-box">
+                <input type="text" id="username" placeholder="Enter Username" />
+                <label for="name">
+                    Username
+                </label>
+                <span class="ss-icon">
+                    check
+                </span>
+            </div>
+            <div class="field bestOf-box">
+                <!-- <input type="text" id="bestOf" placeholder="Best Of"/> -->
+                <select class="select-bestOf">
+                    <option value="three">3</option>
+                    <option value="five">5</option>
+                    <option value="seven">7</option>
+                    <option value="nine">9</option>
+                    <option value="eleven">11</option>
+                </select>
+                <label for="bestOf">
+                    Best Of
+                </label>
+                <span class="ss-icon">
+                    check
+                </span>
+            </div>
+            <div class="field bet-box">
+                <input type="text" id="bet" placeholder="Bet Amount" />
+                <label for="bet">
+                    Place Bet $
+                </label>
+                <span class="ss-icon">
+                    check
+                </span>
+            </div>
+            <div class="field location-box">
+                <!-- <input type="text" id="location" placeholder="Select Location"/> -->
+                <select class="select-location">
+                    <option value="Bookmans">Bookman's East</option>
+                    <option value="Polyhedron Gamestore">Polyhedron Gamestore</option>
+                    <option value="Amazing Discoveries">Amazing Discoveries</option>
+                </select>
+                <label for="location">
+                    Location
+                </label>
+                <span class="ss-icon">
+                    check
+                </span>
+            </div>
+            <input class="button" type="submit" value="Send" />
+        </form>
+    </section>
+    <table class="highlight">
+        <tbody>
+            <!-- Table 1 -->
+            <tr class="game-box">
+                <td class="game-column game-column-ranking padding-top" rowspan="1"></td>
+                <td class="game-column game-column-logo">
+                    <img src="https://pbs.twimg.com/profile_images/1018340603908718595/ZtaXIgFb_400x400.jpg" width="200"
+                        height="225">
+                    <a class="game-item-link" rel="nofollow" href=""></a>
+                </td>
+                <td class="game-column game-column-username">Username</td>
+                <!-- <td class="game-column game-column-console">Console</td> -->
+                <td class="game-column game-column-rating">First To</td>
+                <td class="game-column game-column-tournament">Prize</td>
+                <td class="game-column game-column-location">Location</td>
+                <td class="game-item-link show-more-games-link" colspan="5">
+                    <a href="/challenges" class="waves-effect waves-light btn-large btn black" colspan="5">Accept</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 
-
-
-    
-
-
-
-
-
-
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="/js/index.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script src="./assets/logic.js"></script>
 </body>
 
 </html>
