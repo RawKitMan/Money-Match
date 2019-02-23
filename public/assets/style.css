@@ -1,0 +1,246 @@
+body {
+    background: #efefef;
+    font-size: 62.5%;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    color: #b6b6b6;
+}
+
+body section {
+    background: white;
+    margin: 60px auto 120px;
+    /* border-top: 15px solid #313a3d; */
+    text-align: center;
+    padding: 50px 0 110px;
+    width: 80%;
+    max-width: 1100px;
+    /* font-family: 'Source Serif Pro', serif; */
+    color: black;
+    font-family: 'Special Elite', cursive;
+}
+
+body section h1 {
+    margin-bottom: 40px;
+    font-size: 4em;
+    text-transform: uppercase;
+    /* font-family: 'Lato', sans-serif; */
+    font-weight: 100;
+    /* font-family: 'Source Serif Pro', serif; */
+    font-family: 'Special Elite', cursive;
+}
+
+.betForm {
+    width: 58.33333%;
+    margin: 0 auto;
+    font-family: 'Special Elite', cursive;
+}
+
+.betForm .field {
+    width: 100%;
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.betForm .field label {
+    text-transform: uppercase;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #313a3d;
+    width: 100%;
+    padding: 18px 0;
+    font-size: 1.45em;
+    letter-spacing: 0.075em;
+    -webkit-transition: all 333ms ease-in-out;
+    -moz-transition: all 333ms ease-in-out;
+    -o-transition: all 333ms ease-in-out;
+    -ms-transition: all 333ms ease-in-out;
+    transition: all 333ms ease-in-out;
+    font-family: 'Special Elite', cursive;
+}
+
+.betForm .field label+span {
+    /* font-family: 'SSStandard'; */
+    font-family: 'Special Elite', cursive;
+    opacity: 0;
+    color: white;
+    display: block;
+    position: absolute;
+    top: 12px;
+    left: 7%;
+    font-size: 2.5em;
+    text-shadow: 1px 2px 0 #1ab188;
+    -webkit-transition: all 333ms ease-in-out;
+    -moz-transition: all 333ms ease-in-out;
+    -o-transition: all 333ms ease-in-out;
+    -ms-transition: all 333ms ease-in-out;
+    transition: all 333ms ease-in-out;
+}
+
+.betForm .field input[type="text"], .betForm .field textarea {
+    border: none;
+    background: #e8e9ea;
+    width: 80.5%;
+    margin: 0;
+    padding: 6px 0;
+    padding-left: 19.5%;
+    color: #313a3d;
+    /* font-size: 1.4em; */
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-family: 'Special Elite', cursive;
+    font-size: x-large;
+}
+
+.betForm .field input[type="text"]#msg, .betForm .field textarea#msg {
+    height: 18px;
+    resize: none;
+    -webkit-transition: all 333ms ease-in-out;
+    -moz-transition: all 333ms ease-in-out;
+    -o-transition: all 333ms ease-in-out;
+    -ms-transition: all 333ms ease-in-out;
+    transition: all 333ms ease-in-out;
+    
+}
+
+.betForm .field input[type="text"]:focus, .betForm .field textarea:focus, .betForm .field input[type="text"].focused, .betForm .field textarea.focused {
+    outline: none;
+}
+
+.betForm .field input[type="text"]:focus#msg, .betForm .field textarea:focus#msg, .betForm .field input[type="text"].focused#msg, .betForm .field textarea.focused#msg {
+    padding-bottom: 150px;
+}
+
+.betForm .field input[type="text"]:focus+label, .betForm .field textarea:focus+label, .betForm .field input[type="text"].focused+label, .betForm .field textarea.focused+label {
+    width: 18%;
+    background: #1ab188;
+    color: #313a3d;
+}
+
+.betForm .field input[type="text"].focused+label, .betForm .field textarea.focused+label {
+    color: #1ab188;
+}
+
+.betForm .field:hover label {
+    width: 18%;
+    background: #313a3d;
+    color: white;
+}
+
+.betForm input[type="submit"] {
+    background: #1ab188;
+    color: white;
+    -webkit-appearance: none;
+    border: none;
+    text-transform: uppercase;
+    position: relative;
+    padding: 13px 50px;
+    font-size: 1.4em;
+    letter-spacing: 0.1em;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    -webkit-transition: all 333ms ease-in-out;
+    -moz-transition: all 333ms ease-in-out;
+    -o-transition: all 333ms ease-in-out;
+    -ms-transition: all 333ms ease-in-out;
+    transition: all 333ms ease-in-out;
+    font-family: 'Special Elite', cursive;
+    
+}
+
+.betForm input[type="submit"]:hover {
+    background: #313a3d;
+    color: #1ab188;
+}
+
+.betForm input[type="submit"]:focus {
+    outline: none;
+    background: #1ab188;
+}
+
+.select-location {
+    margin-bottom: 35px;
+    font-size: 12px;
+    width: 300px;
+    display: inline-block;
+    background-color: #e8e9ea;
+    border-radius: 5px;
+    box-shadow: 0 0 2px rgb(204, 204, 204);
+    transition: all .5s ease;
+    position: relative;
+    font-size: 14px;
+    color: #474747;
+    height: 100%;
+    text-align: left;
+    cursor: pointer;
+    display: block;
+    padding: 10px;
+    font-size: 23px;
+    color: black;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+    line-height: 20px;
+    display: inline;
+    font-family: 'Special Elite', cursive;
+}
+
+.select-bestOf {
+    margin-bottom: 4px;
+    font-size: 15px;
+    width: 300px;
+    display: inline-block;
+    background-color: #e8e9ea;
+    border-radius: 5px;
+    box-shadow: 0 0 2px rgb(204, 204, 204);
+    transition: all .5s ease;
+    position: relative;
+    font-size: 12px;
+    color: #474747;
+    height: 100%;
+    text-align: left;
+    cursor: pointer;
+    display: block;
+    padding: 10px;
+    font-size: 23px;
+    color: black;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+    line-height: 20px;
+    display: inline;
+    font-family: 'Special Elite', cursive;
+}
+
+.nav-wrapper{
+    width: auto;
+    height: 100px;
+    background-color: white;
+    font-family: 'Staatliches', cursive;
+    font-size: 25px;
+  }
+
+  .game-box{
+    background-color: white;
+    color: black;
+    height: 60px;
+  }
+  
+  td.game-item-link.show-more-games-link{
+    color:black;
+  }
+
+  td, th{
+    padding: 15px 5px;
+    display: table-cell;
+    text-align: left;
+    vertical-align: middle;
+    border-radius: 2px;
+    font-size: x-large;
+  }
+
+  nav .nav-wrapper{
+      height: 100px;
+  }
+
+  nav ul a{
+    font-size: 20px;
+  }
