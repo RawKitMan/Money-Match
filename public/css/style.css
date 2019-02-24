@@ -12,7 +12,8 @@ html {
 }
 body {
   background: #c1bdba;
-  font-family: 'Titillium Web', sans-serif;
+  /* font-family: 'Titillium Web', sans-serif; */
+  font-family: 'Special Elite', cursive;
 }
 a {
   text-decoration: none;
@@ -203,7 +204,8 @@ td.game-item-link.show-more-games-link{
 
 h1,h2,h3 {
 	margin:0 0 35px 0;
-	font-family: 'Patua One', cursive;
+  /* font-family: 'Patua One', cursive; */
+  font-family: 'Special Elite', cursive;
 	text-transform: uppercase;
 	letter-spacing:1px;
 }
@@ -260,5 +262,6 @@ textarea.form-control{
 /* CREATE FIND GAME USER INFO */
 
 nav ul a{
+  font-family: 'Special Elite', cursive;
   font-size: 20px;
 }
