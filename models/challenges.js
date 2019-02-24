@@ -6,7 +6,7 @@ module.exports = function (sequelize, DataTypes) {
         },
         player_two: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: true
         },
         challenge_accepted: {
             type: DataTypes.BOOLEAN,
@@ -22,7 +22,7 @@ module.exports = function (sequelize, DataTypes) {
         },
         challenge_time: {
             type: DataTypes.DATE,
-            allowNull: false
+            allowNull: true
         }
     });
     return Challenges;
