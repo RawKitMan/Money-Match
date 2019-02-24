@@ -5,9 +5,17 @@ $(document).ready(function() {
 
     //To DELETE from the challenges table
     $("#decline").on("click", function () {
-        console.log("Lindsey is awesome!");
+        console.log("test");
         //AJAX call to delete from Challenges Table.
-    })
+        $.ajax({
+            method: "DELETE",
+            url: "/api/challenges/" + id,
+            //get row id from challenges table            
+        }).then()  
+        
+    });
+
+    
 
     
 })

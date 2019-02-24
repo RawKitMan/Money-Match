@@ -68,8 +68,12 @@ router.post("/api/players", function(req, res) {
 });
 
 router.post("/api/challenges", function (req, res) {
-
-  db.Challenges.create(req.body).then(function (dbChallenge) {
+  const challenge = {
+    player_one: req.body.username,
+    prize_pool: req.body.placebets,
+    venue: req.body.location
+  }
+  db.Challenges.create(challenge).then(function (dbChallenge) {
     console.log(dbChallenge);
     res.json({ id: dbChallenge.insertId });
   });

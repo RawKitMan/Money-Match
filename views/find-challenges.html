@@ -36,12 +36,12 @@
                 <img src="MM-logo.png" class="brand-logo black-text" height="100" />
                 <ul class="hide-on-med-and-down  right">
                     <li>
-                        <a href="challenges.html" class="black-text">
+                        <a href="/challenges" class="black-text">
                             Challenged
                         </a>
                     </li>
                     <li>
-                        <a href="find-challenges.html" class="black-text">
+                        <a href="/find-challenge" class="black-text">
                             Find Challenge
                         </a>
                     </li>
@@ -50,7 +50,7 @@
                             Locations
                         </a>
                     </li>
-                    <li class="active "><a href="contact.html" class="black-text">Contact</a></li>
+                    <li class="active "><a href="/contact" class="black-text">Contact</a></li>
                     <li>
                     <li><a id="logout" class='black-text'>Logout</a></li>
                     <div class="center row">
@@ -74,7 +74,7 @@
         <h1>
             Start A Challenge
         </h1>
-        <form class="betForm">
+        <form id="challengeForm" class="betForm">
             <div class="field username-box">
                 <input type="text" id="username" placeholder="Enter Username" />
                 <label for="name">
@@ -101,7 +101,7 @@
                 </span>
             </div>
             <div class="field bet-box">
-                <input type="text" id="bet" placeholder="Bet Amount" />
+                <input type="text" id="bets" placeholder="Bet Amount" />
                 <label for="bet">
                     Place Bet $
                 </label>
@@ -127,7 +127,7 @@
         </form>
     </section>
     <table class="highlight">
-        <tbody>
+        <tbody id="findChallengeBody">
             <!-- Table 1 -->
             <tr class="game-box">
                 <td class="game-column game-column-ranking padding-top" rowspan="1"></td>
@@ -164,8 +164,9 @@
 
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="/js/index.js"></script>
-    <script src="/js/index-logic.js"></script>
+    <!--<script src="/js/index.js"></script>-->
+    <!--<script src="/js/index-logic.js"></script>-->
+    <script src="/js/view.js"></script>
 
 </body>
 
