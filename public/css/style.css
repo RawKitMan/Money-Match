@@ -1,18 +1,22 @@
 *{
-  font-family: 'Staatliches', cursive;
+  /* font-family: 'Staatliches', cursive; */
+  font-family: 'Special Elite', cursive !important;
   font-size: 25PX;
 }
 
 @import "compass/css3";
 *, *:before, *:after {
   box-sizing: border-box;
+  font-family: 'Special Elite', cursive;
+
 }
 html {
   overflow-y: scroll;
 }
 body {
   background: #c1bdba;
-  font-family: 'Titillium Web', sans-serif;
+  /* font-family: 'Titillium Web', sans-serif; */
+  font-family: 'Special Elite', cursive;
 }
 a {
   text-decoration: none;
@@ -52,6 +56,7 @@ a:hover {
   text-align: center;
   cursor: pointer;
   transition: 0.5s ease;
+  font-family: 'Special Elite', cursive;
 }
 .tab-group li a:hover {
   background: #179b77;
@@ -69,7 +74,8 @@ h1 {
   color: #fff;
   font-weight: 300;
   margin: 0 0 40px;
-  font-size: 30px
+  font-size: 30px;
+  font-family: 'Special Elite', cursive;
 }
 label {
   position: absolute;
@@ -95,6 +101,8 @@ label.active .req {
 }
 label.highlight {
   color: #fff;
+  font-family: 'Special Elite', cursive;
+
 }
 input, textarea {
   font-size: 22px;
@@ -108,6 +116,7 @@ input, textarea {
   color: #fff;
   border-radius: 0;
   transition: border-color 0.25s ease, box-shadow 0.25s ease;
+  font-family: 'Special Elite', cursive;
 }
 input:focus, textarea:focus {
   outline: 0;
@@ -147,6 +156,7 @@ textarea {
   color: #fff;
   transition: all 0.5s ease;
   -webkit-appearance: none;
+  font-family: 'Special Elite', cursive;
 }
 .button:hover, .button:focus {
   background: #179b77;
@@ -196,6 +206,7 @@ td.game-item-link.show-more-games-link{
 	width:50%;
 	height:50%;
   font-family: 'Roboto Condensed', sans-serif;
+  /* font-family: 'Special Elite', cursive; */
   margin: auto;
 	
 }
@@ -203,7 +214,8 @@ td.game-item-link.show-more-games-link{
 
 h1,h2,h3 {
 	margin:0 0 35px 0;
-	font-family: 'Patua One', cursive;
+  /* font-family: 'Patua One', cursive; */
+  font-family: 'Special Elite', cursive;
 	text-transform: uppercase;
 	letter-spacing:1px;
 }
@@ -224,7 +236,8 @@ a:hover,a:focus{
 #contact{
 	background:#333333;
 	color:#f4f4f4;
-	padding-bottom:80px;
+  padding-bottom:80px;
+  font-family: 'Special Elite', cursive;
 }
 
 textarea.form-control{
@@ -249,16 +262,30 @@ textarea.form-control{
   display: block;
   width: 30%;
   text-align: center;
+  font-family: 'Special Elite', cursive;
 }
 
 .betAmount{
   color: black;
   display: block;
   width: 30%;
+  font-family: 'Special Elite', cursive;
 }
 
 /* CREATE FIND GAME USER INFO */
 
 nav ul a{
+  font-family: 'Special Elite', cursive;
   font-size: 20px;
+}
+
+.black-text{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: 'Special Elite', cursive;
+}
+
+table .highlight{
+  font-family: 'Special Elite', cursive;
 }

@@ -1,8 +1,8 @@
-$(document).ready(function() {
+$(document).ready(function () {
 
     //Sign-up
     // $('.error').hide();
-    $('#findMatches').click(function(event) {
+    $('#findMatches').click(function (event) {
         event.preventDefault();
         var name = $('#firstname').val() + ' ' + $('#lastname').val();
         var email = $('#email').val();
@@ -17,36 +17,39 @@ $(document).ready(function() {
             mainGame: maingame,
         }
 
-                $.ajax({
-                    method: "POST",
-                    url: "/api/players",
-                    data: dbPlayers
-                }).then()     
+        $.ajax({
+            method: "POST",
+            url: "/api/players",
+            data: dbPlayers
+        }).then(function () {
+            window.location = "/login"
+        })
 
 
 
     });
 
+    //Sign-In
 
+    $('#logIn').submit(function (e) {
 
-//Sign-In
-    
-    $('#logIn').submit(function(e) {
-        
         e.preventDefault();
         var login = $('#email').val();
         // var password = $('.password').val();
         //GET request for user credentials to compare
         $.ajax({
-            url: '/api/players/' + login,
-            type: 'get',
+            url: '/api/players/login',
+            type: 'post',
+            data: {
+                email: $("#email").val().trim(),
+                password: $("#password").val().trim()
+            },
             dataType: 'json',
-            success: function(data) {
-                console.log(data)
-                if (login == data.email) {
-                    window.location = "/find-challenge"
+            success: function (data) {
+                if (data.success) {
+                    window.location = "/challenges"
                 } else {
-                    window.location = "/404"
+                    window.location = "/login"
                 }
             }
         })

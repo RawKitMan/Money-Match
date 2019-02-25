@@ -1,9 +1,10 @@
 body {
     background: #efefef;
     font-size: 62.5%;
-    font-family: 'Lato', sans-serif;
+    /* font-family: 'Lato', sans-serif; */
     font-weight: 300;
     color: #b6b6b6;
+    font-family: 'Special Elite', cursive;
 }
 
 body section {
@@ -100,7 +101,6 @@ body section h1 {
     -o-transition: all 333ms ease-in-out;
     -ms-transition: all 333ms ease-in-out;
     transition: all 333ms ease-in-out;
-    
 }
 
 .betForm .field input[type="text"]:focus, .betForm .field textarea:focus, .betForm .field input[type="text"].focused, .betForm .field textarea.focused {
@@ -137,7 +137,7 @@ body section h1 {
     padding: 13px 50px;
     font-size: 1.4em;
     letter-spacing: 0.1em;
-    font-family: 'Lato', sans-serif;
+    /* font-family: 'Lato', sans-serif; */
     font-weight: 300;
     -webkit-transition: all 333ms ease-in-out;
     -moz-transition: all 333ms ease-in-out;
@@ -145,7 +145,6 @@ body section h1 {
     -ms-transition: all 333ms ease-in-out;
     transition: all 333ms ease-in-out;
     font-family: 'Special Elite', cursive;
-    
 }
 
 .betForm input[type="submit"]:hover {
@@ -196,7 +195,7 @@ body section h1 {
     position: relative;
     font-size: 12px;
     color: #474747;
-    height: 100%;
+    height: 4rem;
     text-align: left;
     cursor: pointer;
     display: block;
@@ -210,37 +209,48 @@ body section h1 {
     font-family: 'Special Elite', cursive;
 }
 
-.nav-wrapper{
+.nav-wrapper {
     width: auto;
     height: 100px;
     background-color: white;
-    font-family: 'Staatliches', cursive;
+    /* font-family: 'Staatliches', cursive; */
     font-size: 25px;
-  }
+    font-family: 'Special Elite', cursive;
+    padding-top: 15px;
+}
 
-  .game-box{
+.game-box {
     background-color: white;
     color: black;
     height: 60px;
-  }
-  
-  td.game-item-link.show-more-games-link{
-    color:black;
-  }
+}
 
-  td, th{
+td.game-item-link.show-more-games-link {
+    color: black;
+}
+
+td, th {
     padding: 15px 5px;
     display: table-cell;
     text-align: left;
     vertical-align: middle;
     border-radius: 2px;
     font-size: x-large;
-  }
+}
 
-  nav .nav-wrapper{
-      height: 100px;
-  }
+nav .nav-wrapper {
+    height: 100px;
+}
 
-  nav ul a{
+nav ul a {
     font-size: 20px;
-  }
+    font-family: 'Special Elite', cursive;
+}
+
+.map {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 55%;
+    padding-top: 50px;
+}

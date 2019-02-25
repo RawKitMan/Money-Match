@@ -1,11 +1,16 @@
 var express = require("express");
-
 var router = express.Router();
 
 //Need access to the models
 let db = require("../models");
 
+var passport = require("../config/passport");
+
 // Create all our routes and set up logic within those routes where required.
+
+router.post("/api/players/login", passport.authenticate("local", {failureMessage: "Could not authenticate"} ), function (req, res) { 
+  res.json({success:true});
+});
 
 //Access all players
 router.get("/api/players", function (req, res) {
@@ -24,44 +29,42 @@ router.get("/api/challenges", function (req, res) {
   });
 });
 
-router.get("/api/players/:email", function(req, res){
+router.get("/api/players/:email", function (req, res) {
   db.Player.findOne({
-    where:{
+    where: {
       email: req.params.email
     }
-  }).then(function(dbPlayer){
+  }).then(function (dbPlayer) {
     console.log(dbPlayer);
     res.json(dbPlayer);
   });
 });
 
-router.get("/api/players/:game", function(req, res){
+router.get("/api/players/:game", function (req, res) {
   db.Player.findAll({
     where: {
       mainGame: req.params.game
     }
-  }).then(function(dbPlayers){
+  }).then(function (dbPlayers) {
     res.json(dbPlayers);
   });
 });
 
-router.get("/api/venues/:id", function(req, res){
-  db.Venue.findOne({
-    where: {
-      id: req.params.id
-    }
-  }).then(function(dbVenue){
-    res.json(dbVenue);s
-  });
-});
 
-router.post("/api/players/", function (req, res) {
-
-  db.Player.create(req.body).then(function (dbPlayer) {
-    console.log(dbPlayer);
-    res.json({ id: dbPlayer.insertId });
-  });
-
+router.post("/api/players", function(req, res) { 
+  console.log(req.body); 
+  db.Player.create({
+    name: req.body.name,
+    email: req.body.email,
+    username: req.body.username,
+    password: req.body.password,
+    mainGame: req.body.mainGame
+  }).then(function() { 
+    console.log("New Player Added") 
+  }).catch(function(err) { 
+    console.log(err); 
+    res.json(err);
+  }); 
 });
 
 router.post("/api/challenges", function (req, res) {
@@ -77,18 +80,13 @@ router.post("/api/challenges", function (req, res) {
   });
 });
 
-router.post("/api/venues", function (req, res) {
-  db.Venue.create(req.body).then(function (dbVenue) {
-    res.json({ id: dbVenue.insertId });
-  });
-});
-
 
 router.put("/api/players/", function (req, res) {
 
   db.Player.update({
     name: req.body.name,
     username: req.body.username,
+    email: req.body.email,
     password: req.body.password,
     mainGame: req.body.mainGame
   }, {
@@ -142,6 +140,7 @@ router.delete("/api/challenges/:id", function (req, res) {
   });
 });
 
+
 router.get("/api/challenges/:condition", function (req, res) {
   console.log(req.params.condition)
   db.Challenges.findAll({
@@ -151,6 +150,13 @@ router.get("/api/challenges/:condition", function (req, res) {
   }).then(function (dbChallenges) {
     res.json(dbChallenges);
   })
-})
+});
+
+//Logs out the user
+router.get("/logout", function(req, res) { 
+  req.logout(); 
+  res.redirect("/login"); 
+});
+
 // Export routes for server.js to use.
 module.exports = router;
