@@ -32,6 +32,9 @@ $(document).ready(function () {
                 let username = $("<td>");
                 username.attr("class", "game-column game-column-username").text(challenges[i].player_one + " vs " + challenges[i].player_two);
 
+                let challenge_game = $("<td>");
+                username.attr("class", "game-column game-column-username").text(challenges[i].challenge_game);
+
                 let rating = $("<td>");
                 rating.attr("class", "game-column game-column-rating").text("First To " + challenges[i].best_of);
 
