@@ -8,6 +8,10 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.STRING,
             allowNull: true
         },
+        challenge_game:{
+            type: DataTypes.STRING,
+            allowNull: false
+        },
         challenge_accepted: {
             type: DataTypes.BOOLEAN,
             defaultValue: false

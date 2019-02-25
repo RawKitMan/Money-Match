@@ -3,19 +3,8 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Challenge</title>
-    <!-- Compiled and minified CSS -->
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css"> -->
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
-    <!-- <link href="https://fonts.googleapis.com/css?family=Staatliches" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    -->
-    <!-- <link rel="stylesheet" href="assets/style.css" media="screen" title="no title" charset="utf-8"> -->
-    <!-- <link rel="stylesheet" href="assets/style.css" media="screen" title="no title" charset="utf-8"> -->
-
-
-
-
+    <title>Create Challenges</title>
+   
 
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
@@ -23,9 +12,9 @@
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <link rel="stylesheet" href="assets/style.css" media="screen" title="no title" charset="utf-8">
-    <!-- <link href="https://fonts.googleapis.com/css?family=Staatliches" rel="stylesheet"> -->
+   
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- <link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro" rel="stylesheet"> -->
+    
     <link href="https://fonts.googleapis.com/css?family=Special+Elite" rel="stylesheet">
 </head>
 
@@ -37,12 +26,12 @@
                 <ul class="hide-on-med-and-down  right">
                     <li>
                         <a href="/challenges" class="black-text">
-                            Challenged
+                            Active Matches
                         </a>
                     </li>
                     <li>
                         <a href="/find-challenge" class="black-text">
-                            Find Challenge
+                            Create Challenges
                         </a>
                     </li>
                     <li>
@@ -75,7 +64,7 @@
             Start A Challenge
         </h1>
         <form id="challengeForm" class="betForm">
-            <div class="field username-box">
+            <!--<div class="field username-box">
                 <input type="text" id="username" placeholder="Enter Username" />
                 <label for="name">
                     Username
@@ -83,7 +72,7 @@
                 <span class="ss-icon">
                     check
                 </span>
-            </div>
+            </div>-->
             <div class="field bestOf-box">
                 <!-- <input type="text" id="bestOf" placeholder="Best Of"/> -->
                 <select class="select-bestOf">
@@ -112,7 +101,6 @@
                 </span>
             </div>
             <div class="field location-box">
-                <!-- <input type="text" id="location" placeholder="Select Location"/> -->
                 <select class="select-location">
                     <option value="">Select a location</option>
                     <option value="Bookmans">Bookman's East</option>
@@ -130,46 +118,20 @@
         </form>
     </section>
     <table class="highlight">
-        <tbody id="findChallengeBody">
-            <!-- Table 1 -->
-            <tr class="game-box">
-                <td class="game-column game-column-ranking padding-top" rowspan="1"></td>
-                <td class="game-column game-column-logo">
-                    <img src="https://pbs.twimg.com/profile_images/1018340603908718595/ZtaXIgFb_400x400.jpg" width="200"
-                        height="225">
-                    <a class="game-item-link" rel="nofollow" href=""></a>
-                </td>
-                <td class="game-column game-column-username">Username</td>
-                <!-- <td class="game-column game-column-console">Console</td> -->
-                <td class="game-column game-column-rating">First To</td>
-                <td class="game-column game-column-tournament">Prize</td>
-                <td class="game-column game-column-location">Location</td>
-                <td class="game-item-link show-more-games-link" colspan="5">
-                    <a id="acceptChallengeBtn" class="waves-effect waves-light btn-large btn black" colspan="5">Accept</a>
-                </td>
-            </tr>
-        </tbody>
+        <tbody id="findChallengeBody"></tbody>
     </table>
 
+    
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> -->
     <script src="https://code.jquery.com/jquery-3.3.1.js"
         integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
     <script src="./assets/logic.js"></script>
-
-
-
-
-
-
-
-
-
-
-
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!--<script src="/js/index.js"></script>-->
     <!--<script src="/js/index-logic.js"></script>-->
     <script src="/js/view.js"></script>
+    <script src="/js/logout.js"></script>
+    
 
 </body>
 

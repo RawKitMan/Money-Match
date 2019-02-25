@@ -1,14 +1,13 @@
 $(document).ready(function () {
 
-    //Sign-up
-    // $('.error').hide();
+    //Clicking the button will add the new player to our Players database
     $('#findMatches').click(function (event) {
         event.preventDefault();
         var name = $('#firstname').val() + ' ' + $('#lastname').val();
         var email = $('#email').val();
         var username = $('#username').val();
         var password = $('#password').val();
-        var maingame = document.getElementById("#mainGame");
+        var maingame = $('.select-game').val();
         var dbPlayers = {
             name: name,
             email: email,
@@ -23,20 +22,14 @@ $(document).ready(function () {
             data: dbPlayers
         }).then(function () {
             window.location = "/login"
-        })
-
-
-
+        });
     });
 
-    //Sign-In
+    //If a player already has an account, sign-in
 
     $('#logIn').submit(function (e) {
 
         e.preventDefault();
-        var login = $('#email').val();
-        // var password = $('.password').val();
-        //GET request for user credentials to compare
         $.ajax({
             url: '/api/players/login',
             type: 'post',
@@ -46,13 +39,14 @@ $(document).ready(function () {
             },
             dataType: 'json',
             success: function (data) {
+                //Once logged in, go to the challenges page. Otherwise, the app automatically goes to the login screen
                 if (data.success) {
                     window.location = "/challenges"
                 } else {
                     window.location = "/login"
-                }
+                };
             }
-        })
+        });
 
-    })
+    });
 });

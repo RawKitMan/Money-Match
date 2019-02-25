@@ -8,8 +8,8 @@ var passport = require("../config/passport");
 
 // Create all our routes and set up logic within those routes where required.
 
-router.post("/api/players/login", passport.authenticate("local", {failureMessage: "Could not authenticate"} ), function (req, res) { 
-  res.json({success:true});
+router.post("/api/players/login", passport.authenticate("local", { failureMessage: "Could not authenticate" }), function (req, res) {
+  res.json({ success: true });
 });
 
 //Access all players
@@ -50,27 +50,30 @@ router.get("/api/players/:game", function (req, res) {
   });
 });
 
-
-router.post("/api/players", function(req, res) { 
-  console.log(req.body); 
+//Account creation
+router.post("/api/players", function (req, res) {
+  console.log(req.body);
   db.Player.create({
     name: req.body.name,
     email: req.body.email,
     username: req.body.username,
     password: req.body.password,
     mainGame: req.body.mainGame
-  }).then(function() { 
-    console.log("New Player Added") 
-  }).catch(function(err) { 
-    console.log(err); 
+  }).then(function () {
+    console.log("New Player Added")
+  }).catch(function (err) {
+    console.log(err);
     res.json(err);
-  }); 
+  });
 });
 
+
+//Creates a new challenge that the user sets up.
 router.post("/api/challenges", function (req, res) {
   const challenge = {
     player_one: req.body.username,
     prize_pool: req.body.placebets,
+    challenge_game: req.body.challenge_game,
     best_of: req.body.best_of,
     venue: req.body.location
   }
@@ -80,31 +83,12 @@ router.post("/api/challenges", function (req, res) {
   });
 });
 
-
-router.put("/api/players/", function (req, res) {
-
-  db.Player.update({
-    name: req.body.name,
-    username: req.body.username,
-    email: req.body.email,
-    password: req.body.password,
-    mainGame: req.body.mainGame
-  }, {
-      where: {
-        id: req.body.id
-      }
-    }).then(function (dbPlayer) {
-      if (dbPlayer.changedRows === 0) {
-        return res.status(404).end();
-      }
-      res.status(200).end();
-    });
-});
-
+//Updates the challenge to indicate if it was accepted or not
 router.put("/api/challenges/:id", function (req, res) {
 
   console.log(req.body.challenge_accepted);
   db.Challenges.update({
+    player_two: req.body.player_two,
     challenge_accepted: req.body.challenge_accepted
   }, {
       where: {
@@ -118,17 +102,8 @@ router.put("/api/challenges/:id", function (req, res) {
     });
 });
 
-router.delete("/api/players/:username", function (req, res) {
-  db.Player.destroy({
-    where: {
-      player_one: req.params.username
-    }
-  }).then(function (dbPlayer) {
 
-    res.json(dbPlayer);
-  });
-});
-
+//If one of the players wishes to not participate in the challenge, the decline button will delete the challenge from the table
 router.delete("/api/challenges/:id", function (req, res) {
   db.Challenges.destroy({
     where: {
@@ -140,9 +115,9 @@ router.delete("/api/challenges/:id", function (req, res) {
   });
 });
 
-
+//To display which challenges have been set and which have been accepted
 router.get("/api/challenges/:condition", function (req, res) {
-  console.log(req.params.condition)
+  console.log(typeof req.params.condition)
   db.Challenges.findAll({
     where: {
       challenge_accepted: req.params.condition
@@ -153,9 +128,21 @@ router.get("/api/challenges/:condition", function (req, res) {
 });
 
 //Logs out the user
-router.get("/logout", function(req, res) { 
-  req.logout(); 
-  res.redirect("/login"); 
+router.get("/logout", function (req, res) {
+  req.logout();
+  res.redirect("/login");
+});
+
+router.get("/api/user_data", function (req, res) {
+  if (!req.user) { // The user is not logged in, send back an empty object 
+    res.json({});
+  } else {
+    console.log(req.user);
+    res.json({
+      username: req.user.username,
+      mainGame: req.user.mainGame
+    });
+  };
 });
 
 // Export routes for server.js to use.
