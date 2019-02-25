@@ -11,6 +11,10 @@ module.exports = function (sequelize, DataTypes) {
         challenge_accepted: {
             type: DataTypes.BOOLEAN,
             defaultValue: false
+        },
+        best_of: {
+            type: DataTypes.INTEGER, 
+            allowNull: false
         },        
         prize_pool: {
             type: DataTypes.DECIMAL(10,2),
@@ -20,10 +24,6 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.STRING,
             allowNull: false
         },
-        challenge_time: {
-            type: DataTypes.DATE,
-            allowNull: true
-        }
     });
     return Challenges;
 };

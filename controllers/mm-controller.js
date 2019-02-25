@@ -68,6 +68,7 @@ router.post("/api/challenges", function (req, res) {
   const challenge = {
     player_one: req.body.username,
     prize_pool: req.body.placebets,
+    best_of: req.body.best_of,
     venue: req.body.location
   }
   db.Challenges.create(challenge).then(function (dbChallenge) {
@@ -102,13 +103,14 @@ router.put("/api/players/", function (req, res) {
     });
 });
 
-router.put("/api/challenges/", function (req, res) {
+router.put("/api/challenges/:id", function (req, res) {
 
+  console.log(req.body.challenge_accepted);
   db.Challenges.update({
     challenge_accepted: req.body.challenge_accepted
   }, {
       where: {
-        id: req.body.id
+        id: req.params.id
       }
     }).then(function (dbChallenge) {
       if (dbChallenge.changedRows === 0) {
@@ -118,10 +120,10 @@ router.put("/api/challenges/", function (req, res) {
     });
 });
 
-router.delete("/api/players/:id", function (req, res) {
+router.delete("/api/players/:username", function (req, res) {
   db.Player.destroy({
     where: {
-      id: req.params.id
+      player_one: req.params.username
     }
   }).then(function (dbPlayer) {
 
@@ -140,5 +142,15 @@ router.delete("/api/challenges/:id", function (req, res) {
   });
 });
 
+router.get("/api/challenges/:condition", function (req, res) {
+  console.log(req.params.condition)
+  db.Challenges.findAll({
+    where: {
+      challenge_accepted: req.params.condition
+    }
+  }).then(function (dbChallenges) {
+    res.json(dbChallenges);
+  })
+})
 // Export routes for server.js to use.
 module.exports = router;
