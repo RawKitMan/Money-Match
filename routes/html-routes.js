@@ -6,14 +6,16 @@ module.exports = function (app) {
 
   // Each of the below routes just handles the HTML page that the user gets sent to.
 
-  app.get("/", function (req, res) { // If the user already has an account send them to the members page 
+  //Takes the user to the sign up page. If the user has an account, the app goes to the challenges route
+  app.get("/", function (req, res) { 
     if (req.user) {
       res.redirect("/challenges");
     }
     res.sendFile(path.join(__dirname, "../views/signup.html"));
   });
 
-  app.get("/login", function (req, res) { // If the user already has an account send them to the members page 
+  //Takes the user to the sign up page. If the user has an account, the app goes to the challenges route
+  app.get("/login", function (req, res) {
     if (req.user) {
       res.redirect("/challenges");
     }
@@ -25,20 +27,22 @@ module.exports = function (app) {
     res.sendFile(path.join(__dirname, "../views/signup.html"));
   });
 
-  //See whoever has challenged the user
+  //See all active challenges from various players for various games
   app.get("/challenges", isAuthenticated, function (req, res) {
     res.sendFile(path.join(__dirname, "../views/challenges.html"));
   });
 
-  //Potential New Route
+  //Sends the user to where they can create a challenge or accept an available challenge
   app.get("/find-challenge", isAuthenticated, function (req, res) {
     res.sendFile(path.join(__dirname, "../views/find-challenges.html"));
   });
 
-  app.get("/watchMatches", function (req, res) {
+  //Takes the user to the Locations map page
+  app.get("/watchMatches", isAuthenticated, function (req, res) {
     res.sendFile(path.join(__dirname, "../views/watchMatches.html"));
   });
 
+  //Takes the user to our contact page
   app.get("/contact", function (req, res) {
     res.sendFile(path.join(__dirname, "../views/contact.html"));
   });

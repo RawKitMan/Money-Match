@@ -1,83 +1,73 @@
+//Logic for the active challenges page
+
 $(document).ready(function () {
+    
+    //We need the active user's data for a couple of features
     $.ajax({
         method: "GET",
-        url: "/api/challenges/1"
-        //get row id from challenges table            
-    }).then(challenges => {
-        console.log(challenges);
-        let deleteChallengeBody = $("#deleteChallengeBody")
+        url: "/api/user_data"
+    }).then(function (user) {
+        //We only want challenges from the Challenges table where it was accepted
+        $.ajax({
+            method: "GET",
+            url: "/api/challenges/1"           
+        }).then(challenges => {
+            
 
-        for (let i = 0; i < challenges.length; i++) {
-            console.log(i);
-            let tr = $("<tr>")
-            tr.attr("class", "game-box")
-            console.log(challenges[i])
-            tr.attr("id", challenges[i].id);
+            //Create the table row with all the data from the data sent back to us
+            let deleteChallengeBody = $("#deleteChallengeBody")
 
-            let toprow = $("<td>");
-            toprow.attr("class", "game-column game-column-ranking padding-top");
-            toprow.attr("rowspan", 1);
-            toprow.appendTo(tr);
-            let imgSpace = $("<td>");
-            imgSpace.attr("game-column game-column-logo");
+            for (let i = 0; i < challenges.length; i++) {
+                console.log(i);
+                let tr = $("<tr>")
+                tr.attr("class", "game-box")
+                console.log(challenges[i])
+                tr.attr("id", challenges[i].id);
 
+                let toprow = $("<td>");
+                toprow.attr("class", "game-column game-column-ranking padding-top");
+                toprow.attr("rowspan", 1);
+                toprow.appendTo(tr);
+                
+                let username = $("<td>");
+                username.attr("class", "game-column game-column-username").text(challenges[i].player_one + " vs " + challenges[i].player_two);
 
-            let img = $("<img>");
-            img.attr("src", "https://pbs.twimg.com/profile_images/1018340603908718595/ZtaXIgFb_400x400.jpg")
-            img.attr("width", 200);
-            img.attr("height", 225);
+                let rating = $("<td>");
+                rating.attr("class", "game-column game-column-rating").text("First To " + challenges[i].best_of);
 
+                let prize = $("<td>");
+                prize.attr("class", "game-column game-column-tournament").text(challenges[i].prize_pool);
 
+                let location = $("<td>");
+                location.attr("class", "game-column game-column-location").text(challenges[i].venue);
 
-            let gameLink = $("<a>");
-            gameLink.attr("class", "game-link-item");
-            gameLink.attr("rel", "nofollow");
-            gameLink.attr("href", "");
+                let acceptBtn = $("<td>");
+                acceptBtn.attr("class", "game-item-link show-more-games-link");
+                acceptBtn.attr("colspan", 5);
 
-            img.appendTo(imgSpace);
-            gameLink.appendTo(imgSpace);
-            imgSpace.appendTo(tr);
+                //Without this condition, ANY user can decline the challenge and delete it from the table. Only the involved players should be able to.
+                if (user.username === challenges[i].player_one || user.username === challenges[i].player_two) {
 
-            let username = $("<td>");
-            username.attr("class", "game-column game-column-username").text(challenges[i].player_one);
+                    let btn = $("<a>").attr("class", "waves-effect waves-light btn-large btn black")
+                    btn.attr("colspan", 5);
+                    //btn.attr("href", "/challenges");
+                    btn.attr("id", "deleteChallengeBtn");
+                    btn.text("Decline");
+                    btn.appendTo(acceptBtn);
+                };
 
-            let rating = $("<td>");
-            rating.attr("class", "game-column game-column-rating").text("First To");
-
-            let prize = $("<td>");
-            prize.attr("class", "game-column game-column-tournament").text(challenges[i].prize_pool);
-
-            let location = $("<td>");
-            location.attr("class", "game-column game-column-location").text(challenges[i].venue);
-
-            let acceptBtn = $("<td>");
-            acceptBtn.attr("class", "game-item-link show-more-games-link");
-            acceptBtn.attr("colspan", 5);
-
-            let btn = $("<a>").attr("class", "waves-effect waves-light btn-large btn black")
-            btn.attr("colspan", 5);
-            //btn.attr("href", "/challenges");
-            btn.attr("id", "deleteChallengeBtn");
-            btn.text("Decline");
-            btn.appendTo(acceptBtn);
-
-
-            //Appending
-            username.appendTo(tr);
-            rating.appendTo(tr);
-            prize.appendTo(tr);
-            location.appendTo(tr);
-            acceptBtn.appendTo(tr);
-
-
-
-            tr.appendTo(deleteChallengeBody);
-
-
-
-        }
-    })
-
+                //Appending
+                username.appendTo(tr);
+                rating.appendTo(tr);
+                prize.appendTo(tr);
+                location.appendTo(tr);
+                acceptBtn.appendTo(tr);
+                tr.appendTo(deleteChallengeBody);
+            };
+        });
+    });
+    
+    //The Decline button will delete the active challenge from the page and the Challenge table
     $(document).on("click", "#deleteChallengeBtn", function () {
         console.log($(this).parents("tr").attr("id"));
         var rowRemove = $(this).parents("tr");
@@ -90,30 +80,7 @@ $(document).ready(function () {
 
         }).then(function () {
             console.log("challenge declined");
-        })
+        });
+    });  
 
-    })
-
-    //Decline Button with Modal
-    // $(".modal").modal();
-
-    // //To DELETE from the challenges table
-    // $("#decline").on("click", function () {
-    //     console.log("test");
-    //     var $tr = $(this).closest('tr');
-    //     //AJAX call to delete from Challenges Table.
-    //     $.ajax({
-    //         method: "DELETE",
-    //         url: "/api/challenges/" + $(this).parents("tr").attr("id"),
-    //         success: function (response) {
-    //             $tr.find("#deleteChallengeBody").fadeOut(1000, function () {
-    //                 $tr.remove();
-    //             });
-    //         }
-    //     })
-
-
-
-    // });
-
-})
+});
