@@ -35,6 +35,10 @@ module.exports = function (app) {
     res.sendFile(path.join(__dirname, "../views/find-challenges.html"));
   });
 
+  app.get("/watchMatches", function (req, res) {
+    res.sendFile(path.join(__dirname, "../views/watchMatches.html"));
+  });
+
   app.get("/contact", function (req, res) {
     res.sendFile(path.join(__dirname, "../views/contact.html"));
   });
