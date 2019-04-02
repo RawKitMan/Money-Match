@@ -1,6 +1,12 @@
 # Money-Match
 This app is for those playing Fighting Games (Street Fighter, Smash Brothers, Tekken, etc) to set up "Money Matches" with those who don't know who to play against. The players will search for others who play their particular game, request and agree to matches for a set amount of money, and meet at a safe designated venue. This app does not hold onto any of the money nor distributes it. Money Match uses Passport.js for user authentication since we are dealing with user accounts.
 
+Contributors:
+
+- CJ Vaughn: Project Lead, server, controllers, Passport implementation, front-end programming
+- Will Higareda: Front-end programming
+- Nick Stofko: HTML/CSS
+
 How to use the app:
 
 1) Create an account or sign in (if you already have an account)
